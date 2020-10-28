@@ -1,0 +1,45 @@
+.dialogs__inner {
+    display: flex;
+    padding: 30px;
+}
+
+.dialogs {
+    width: 25%;
+    margin-right: 15px;
+}
+
+.dialogs a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background-color: #fff;
+    padding: 12px 15px;
+    margin-bottom: 24px;
+    border-radius: 5px;
+    transition: all .2s linear;
+    border: 1px solid #3185fc00;
+}
+
+.dialogs a:hover {
+    border: 1px solid #3185FC;
+    color: #3185FC;
+}
+
+.dialogs a.active {
+    background-color: #3185FC;
+    color: #fff;
+}
+
+.dialogs__item.active {
+    background-color: #3185FC;
+    color: #fff;
+}
+
+.messages { 
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    background-color: #fff;
+    padding: 30px;
+}
