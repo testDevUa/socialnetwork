@@ -18,7 +18,7 @@ let Profile = (props) => {
                 </div>
             </div>
             <div className="line"></div>
-            <Posts state = {props.state} />    
+            <Posts state = {props.state} addPost = {props.addPost}/>    
         </div>
     )
 }

@@ -40,4 +40,12 @@ let state = {
     }
 };
 
+export let addPost = (props) => {
+    state.profilePage.posts.push(
+        {
+            text: props
+        }
+    )
+}
+
 export default state;

@@ -16,7 +16,7 @@ function App(props) {
       <div className='pageInner'>
         <LeftSideBar />
         <div className='Content'>
-          <Route path='/Profile' component={() => <Profile state={props.state.profilePage} />} />
+          <Route path='/Profile' component={() => <Profile state={props.state.profilePage} addPost={props.addPost}/>} />
           <Route path='/Dialogs' component={() => <Dialogs state={props.state.dialogsPage} />} />
           <Route path='/News' component={News} />
           <Route path='/Music' component={Music} />

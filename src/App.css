@@ -22,7 +22,7 @@ header {
 
 .pageInner {
   display: flex;
-  margin-top: 30px;
+  margin: 30px 0;
 }
 
 .Content {
