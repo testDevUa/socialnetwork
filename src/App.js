@@ -9,23 +9,21 @@ import News from './libraries/News/News';
 import Profile from './libraries/Profile/Profile';
 import Settings from './libraries/Settings/Settings';
 
-function App() {
+function App(props) {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Header />
-        <div className='pageInner'>
-          <LeftSideBar />
-          <div className='Content'>
-            <Route path='/Profile' component={Profile} />
-            <Route path='/Dialogs' component={Dialogs} />
-            <Route path='/News' component={News} />
-            <Route path='/Music' component={Music} />
-            <Route path='/Settings' component={Settings} />
-          </div>
+    <div className="App">
+      <Header />
+      <div className='pageInner'>
+        <LeftSideBar />
+        <div className='Content'>
+          <Route path='/Profile' component={() => <Profile state={props.state.profilePage} />} />
+          <Route path='/Dialogs' component={() => <Dialogs state={props.state.dialogsPage} />} />
+          <Route path='/News' component={News} />
+          <Route path='/Music' component={Music} />
+          <Route path='/Settings' component={Settings} />
         </div>
       </div>
-    </BrowserRouter>
+    </div>
   );
 }
 

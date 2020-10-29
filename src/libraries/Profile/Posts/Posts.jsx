@@ -1,36 +1,27 @@
 import React from 'react';
-import Post from './Post/Post';
 import './Posts.css';
+import Post from './Post/Post';
 
-let postsData = [
-    {
-        text: 'Hey, why nobody loves me'
-    },
-    {
-        text: 'Just text'
-    },
-    {
-        text: 'Third post'
-    },
-    {
-        text: 'Second post'
-    },
-    {
-        text: 'First post'
-    }
-];
+let addPostElem = React.createRef();
 
-let posts = postsData.map( p => <Post text={p.text} />);
+let addPost = () => {
+    alert(addPostElem.current.value);
+    addPostElem.current.value='';
+}
 
-const Posts = () => {
+
+const Posts = (props) => {
+    
+    let allPosts = props.state.posts.map( p => <Post text={p.text} />);
+
     return (
         <div className="Posts">
             <h3>My posts</h3>      
-            <input type="text" className='post__inp' placeholder='Your news...'/>
+            <input type="text" className='post__inp' placeholder='Your news...' ref={addPostElem}/>
             <div className="post__btn">
-                <button className="post__add">Post</button>
+                <button className="post__add" onClick={addPost}>Post</button>
             </div>
-            { posts }
+            { allPosts }
         </div> 
     )
 };

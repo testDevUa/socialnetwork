@@ -2,7 +2,7 @@ import React from 'react';
 import './profile.css';
 import Posts from './Posts/Posts';
 
-let Profile = () => {
+let Profile = (props) => {
     return (
         <div className="profile">
             <div className='profile__inner'>
@@ -18,7 +18,7 @@ let Profile = () => {
                 </div>
             </div>
             <div className="line"></div>
-            <Posts />    
+            <Posts state = {props.state} />    
         </div>
     )
 }

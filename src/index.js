@@ -3,10 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Post from './libraries/Profile/Posts/Post/Post';
+import DialogsItem from './libraries/Dialogs/Messages/DialogsItem/DialogsItem';
+import state from './redux/state';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+// let posts = postsData.map( p => <Post text={p.text} />);
+
+// let dialogs = DialogsData.map ( d => <DialogsItem name={d.name} id={d.id} />)
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App state={state} />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

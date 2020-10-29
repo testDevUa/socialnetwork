@@ -1,46 +1,18 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './Dialogs.css';
+import DialogsItem from './Messages/DialogsItem/DialogsItem';
 import MessageIn from './Messages/MessageIn';
 import MessageOut from './Messages/MessageOut';
 
-const DialogsItem = (props) => {
-    let path = "/Dialogs/" + props.id;
-    return (
-        <NavLink to={path} activeClassName="active">
-            {props.name}
-        </NavLink>
-    )
-}
+const Dialogs = (props) => {
 
-const Dialogs = () => {
-    let DialogsData = [
-        {
-            name: 'Dmytro',
-            id: 1
-        },
-        {
-            name: 'Sasha',
-            id: 2
-        },
-        {
-            name: 'Vova',
-            id: 3
-        },
-        {
-            name: 'Nastya',
-            id: 4
-        }
+    let allDialogs = props.state.dialogs.map ( d => <DialogsItem name={d.name} id={d.id} />)
 
-    ];
-
-    let dialogs = DialogsData.map ( (d) => <DialogsItem name={d.name} id={d.id} />)
-
-    console.log(DialogsData.filter(item => item.id > 2));
     return (
         <div className="dialogs__inner">
             <div className="dialogs">
-                { dialogs }
+                {allDialogs}
+                {/* <DialogsItem dialogs={props.dialogs}/> */}
             </div>
             <div className="messages">
                 <MessageOut text="Do you want to take a ride?" />
