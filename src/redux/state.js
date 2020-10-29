@@ -1,3 +1,5 @@
+import Render from "../render";
+
 let state = {
     profilePage: {
         posts: [
@@ -46,6 +48,7 @@ export let addPost = (props) => {
             text: props
         }
     )
+    Render(state);
 }
 
 export default state;
